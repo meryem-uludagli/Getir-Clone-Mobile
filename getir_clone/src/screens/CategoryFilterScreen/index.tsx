@@ -1,0 +1,16 @@
+import React, { useState } from "react";
+import { ScrollView, Text } from "react-native";
+import CategoryFiltering from "../../companents/CategoryFiltering";
+import { Category } from "../../models";
+function index(props) {
+  const [category, setCategories] = useState<Category>(
+    props.route.params.category
+  );
+  return (
+    <ScrollView>
+      <CategoryFiltering category={category} />
+    </ScrollView>
+  );
+}
+
+export default index;
